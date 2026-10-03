@@ -20,13 +20,13 @@ const HeroExperience = () => {
         maxDistance={20}
         minDistance={5}
         minPolarAngle={Math.PI / 5}
-        maxPolerAngle={Math.PI / 2}
+        maxPolarAngle={Math.PI / 2}
       />
       <HeroLight/>
       <Particles count={100}/>
      <group 
-     scale={isMobile?0.7:1}
-     position={[0,-3.5,0]}
+     scale={isMobile?1.15:1}
+     position={[0,isMobile?-2.5:-3.5,0]}
      rotation={[0,-Math.PI/4,0]}
      >
      <Room/>

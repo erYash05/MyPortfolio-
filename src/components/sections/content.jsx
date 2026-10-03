@@ -13,7 +13,7 @@ const content = [
     content: (
       <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white text-lg font-semibold rounded-xl shadow-lg">
        <img
-          src="../../../public/images/T1.jpeg"
+          src="/images/T1.jpeg"
           width={400}
           height={400}
           className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
@@ -29,7 +29,7 @@ const content = [
     content: (
       <div className="flex h-full w-full items-center justify-center text-white rounded-xl overflow-hidden shadow-md">
         <img
-          src="../../../public/images/T3.jpeg"
+          src="/images/T3.jpeg"
           width={400}
           height={400}
           className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
@@ -45,7 +45,7 @@ const content = [
     content: (
       <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white text-lg font-semibold rounded-xl shadow-lg">
         <img
-          src="../../../public/images/T@.jpeg"
+          src="/images/T@.jpeg"
           width={400}
           height={400}
           className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
@@ -61,7 +61,7 @@ const content = [
     content: (
       <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--purple-500),var(--pink-500))] text-white text-lg font-semibold rounded-xl shadow-lg">
         <img
-          src="../../../public/images/T1.jpeg"
+          src="/images/T1.jpeg"
           width={400}
           height={400}
           className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"

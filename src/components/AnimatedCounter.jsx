@@ -9,11 +9,11 @@ const AnimatedCounter = () => {
   
 
   return (
-    <div className=" animation-counter w-full px-4 md:px-8 lg:px-20 py-16 z-10">
+    <div className="animation-counter z-10 w-full px-4 py-10 sm:px-8 sm:py-14 lg:px-20">
       
 
       {/* Heading */}
-      <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center  text-white mt-15 mb-10 leading-snug font-sans">
+      <h1 className="mb-6 mt-4 text-center font-sans text-xl font-bold leading-snug text-white sm:mb-10 sm:text-3xl lg:text-5xl">
         Turning <ColourfulText text="ideas" /> <br /> 
         into interactive web experiences
       </h1>
@@ -21,24 +21,21 @@ const AnimatedCounter = () => {
       {/* Counter Grid */}
       <div
         id="counter"
-        className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 z-10 gap-6"
+        className="mx-auto grid max-w-6xl grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4"
       >
         
         {counterItems.map((item, index) => (
           <div
             key={index}
-            className="bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-2xl shadow-lg 
-                       p-10 flex flex-col items-center justify-center 
-                       hover:scale-105 transition-transform duration-300 ease-in-out
-                       border border-zinc-700 z-10"
+            className="z-10 flex min-w-0 flex-col items-center justify-center rounded-xl border border-zinc-700 bg-gradient-to-br from-zinc-800 to-zinc-900 p-4 shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 sm:rounded-2xl sm:p-6"
           >
             {/* Counter Number */}
-            <div className="counter-number text-white text-4xl md:text-5xl lg:text-6xl font-extrabold mb-2 drop-shadow-md">
+            <div className="counter-number mb-1 text-3xl font-extrabold text-white drop-shadow-md sm:text-4xl lg:text-6xl">
               <CountUp suffix={item.suffix} end={item.value} duration={3} />
             </div>
 
             {/* Label */}
-            <div className="text-zinc-300 text-base md:text-lg lg:text-xl font-medium text-center">
+            <div className="text-center text-xs font-medium text-zinc-300 sm:text-sm lg:text-xl">
               {item.label}
             </div>
 

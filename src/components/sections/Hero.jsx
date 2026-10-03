@@ -24,12 +24,13 @@ const Hero = () => {
       );
     });
 
-    
+
     
 
     // cleanup to avoid duplicate animations on re-render
     return () => ctx.revert();
   }, []);
+
 
   return (
     <div>
@@ -37,7 +38,7 @@ const Hero = () => {
         {/* Background */}
         <div className="w-[9rem]  absolute p-10  ">
           <img  className=" rounded-4xl"
-          src="../../../public/images/C1.png" alt="" />
+          src="/images/C1.png" alt="" />
         </div>
         <div className="absolute top-0 left-0 -z-10">
           <img src="/images/bg.png" alt="background" />
@@ -46,7 +47,7 @@ const Hero = () => {
         <div className="hero-layout">
           {/* Left side */}
           <header
-            className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5"
+            className="flex w-full flex-col justify-center px-5 md:px-12 xl:w-1/2 xl:px-20"
           >
             <div className="flex flex-col gap-7 z-10">
               <div className="hero-text">
@@ -91,7 +92,7 @@ const Hero = () => {
           </header>
 
           {/* Right: 3D Model */}
-          <figure>
+          <figure className="m-0 w-full xl:w-1/2">
             <div className="hero-3d-layout z-10">
               <HeroExperience />
             </div>

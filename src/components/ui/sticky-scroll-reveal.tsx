@@ -53,12 +53,11 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative flex h-[30rem] justify-center space-x-10 overflow-y-auto rounded-md p-10"
-      ref={ref}>
-      <div className="div relative flex items-start px-4">
-        <div className="max-w-2xl">
+      className="relative flex h-[72svh] min-h-[460px] max-h-[700px] min-w-0 flex-row items-start gap-3 overflow-hidden rounded-md p-3 sm:gap-5 sm:p-5 lg:h-[30rem] lg:justify-center lg:gap-0 lg:space-x-10 lg:p-10">
+      <div ref={ref} className="relative order-1 h-full min-w-0 flex-1 basis-0 overflow-y-auto px-0.5 pr-2 lg:px-4">
+        <div className="max-w-2xl min-w-0">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className="my-4 py-3 sm:my-6 lg:my-10">
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -66,7 +65,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100">
+                className="text-base font-bold leading-snug text-slate-100 sm:text-xl lg:text-2xl">
                 {item.title}
               </motion.h2>
               <motion.p
@@ -76,18 +75,18 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg mt-10 max-w-sm text-slate-300">
+                className="mt-2 max-w-sm text-[12px] leading-relaxed text-slate-300 sm:mt-4 sm:text-sm lg:mt-10 lg:text-base">
                 {item.description}
               </motion.p>
             </div>
           ))}
-          <div className="h-40" />
+          <div className="h-6 lg:h-40" />
         </div>
       </div>
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "sticky top-10 hidden h-60 w-80 overflow-hidden rounded-md bg-white lg:block",
+          "order-2 block h-[190px] w-[40%] shrink-0 overflow-hidden rounded-md bg-white sm:h-[220px] lg:h-60 lg:w-80",
           contentClassName
         )}>
         {content[activeCard].content ?? null}

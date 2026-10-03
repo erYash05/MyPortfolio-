@@ -45,16 +45,16 @@ const TechStack = () => {
 
       {/* Tech Grid */}
       <div className="w-full h-full md:px-10 px-5">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 place-items-center">
+        <div className="grid min-w-0 grid-cols-2 place-items-center gap-3 sm:grid-cols-3 sm:gap-5 md:grid-cols-4 lg:grid-cols-5">
           {techStackIcons.map((techStackIcon) => (
             <BackgroundGradient
               key={techStackIcon.name}
-              className="card-border tech-card overflow-hidden group xl:rounded-full rounded-lg w-full max-w-[160px] sm:max-w-[180px]"
+              className="card-border tech-card group w-full min-w-0 max-w-[130px] overflow-hidden rounded-xl lg:max-w-[180px] lg:rounded-full"
             >
               <div className="tech-card-animated-bg" />
               <div className="tech-card-content flex flex-col items-center p-4">
                 {/* 3D Tech Icon */}
-                <div className="tech-icon-wrapper mb-2">
+                <div className="tech-icon-wrapper mb-2 rounded-lg">
                   <TechIconCardExperience model={techStackIcon} />
                 </div>
                 {/* Tech Name */}

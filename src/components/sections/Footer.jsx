@@ -3,8 +3,8 @@ import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#20263e] text-white px-2 md:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center ">
+    <footer className="bg-[#20263e] px-4 py-8 text-white sm:px-8 md:px-12 xl:px-20">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
 
         {/* Left: Logo + Brand */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left ">
@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
 
         {/* Middle: Navigation */}
-        <div className="flex flex-col mr-20 md:flex-row gap-4 text-center md:text-left">
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-3 text-center md:justify-start">
           <a href="#hero" className="hover:text-blue-400 transition">Home</a>
           <a href="#tech" className="hover:text-blue-400 transition">Skills</a>
           <a href="#content" className="hover:text-blue-400 transition">Projects</a>
@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
 
         {/* Right: Social Media */}
-        <div className="flex gap-5">
+        <div className="flex flex-wrap justify-center gap-5">
           <a href="https://github.com/erYashSurywanshi" target="_blank" rel="noreferrer">
             <FaGithub size={24} className="hover:text-blue-400 transition" />
           </a>
@@ -45,7 +45,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom small text */}
-      <div className="py-3  text-center ml-15 text-gray-500 text-sm">
+      <div className="py-4 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} Yash Surywanshi. All rights reserved.
       </div>
     </footer>

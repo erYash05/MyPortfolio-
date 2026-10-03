@@ -12,7 +12,7 @@ const ExpContent = () => {
   };
 
   return (
-    <div className="relative card-border rounded-xl p-6 overflow-hidden  shadow-lg">
+    <div className="relative h-full min-w-0 overflow-hidden rounded-xl card-border p-4 shadow-lg sm:p-6">
   {/* Title */}
   <h1 className="font-semibold bg-amber-500 p-3 rounded-2xl text-lg relative z-10">
     Frontend Developer Intern
@@ -29,7 +29,7 @@ const ExpContent = () => {
   <div className="h-0 w-[40rem] absolute top-[20%] right-[-5%] shadow-[0_0_900px_20px_#e99b63]"></div>
 
   {/* Spline Model */}
-  <div className="relative w-[50rem] h-[30rem] mt-2 mr-8">
+  <div className="relative mt-2 h-[min(45vh,30rem)] min-h-[280px] w-full max-w-full">
     <Spline scene="https://prod.spline.design/ahexc547vhkBfQdC/scene.splinecode" />
   </div>
 </div>
