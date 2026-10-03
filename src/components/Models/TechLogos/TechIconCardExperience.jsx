@@ -1,60 +1,73 @@
-import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei";
+import React, { Suspense, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import { useEffect } from "react";
+import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
+import { Smartphone3D, Instagram3D, UIUX3D } from "./Skill3DModels";
+import WebGLErrorBoundary from "../../WebGLErrorBoundary";
 
-const TechIconCardExperience = ({ model }) => {
+const GLTFModel = ({ model }) => {
   const scene = useGLTF(model.modelPath);
 
   useEffect(() => {
     if (model.name === "Interactive Developer") {
       scene.scene.traverse((child) => {
-        if (child.isMesh) {
-          if (child.name === "Object_5") {
-            child.material = new THREE.MeshStandardMaterial({ color: "white" });
-          }
+        if (child.isMesh && child.name === "Object_5") {
+          child.material = new THREE.MeshStandardMaterial({ color: "white" });
         }
       });
     }
-  }, [scene]);
+  }, [scene, model.name]);
 
   return (
-    <Canvas>
-      <ambientLight intensity={0.3} />
-      <directionalLight position={[5, 5, 5]} intensity={1} />
-      <spotLight
-        position={[10, 15, 10]}
-        angle={0.3}
-        penumbra={1}
-        intensity={2}
-      />
-      <Environment preset="city" />
+    <group scale={model.scale} rotation={model.rotation}>
+      <primitive object={scene.scene} />
+    </group>
+  );
+};
 
-      {/* 
-        The Float component from @react-three/drei is used to 
-        create a simple animation of the model floating in space.
-        The rotationIntensity and floatIntensity props control the
-        speed of the rotation and float animations respectively.
+const RenderModel = ({ model }) => {
+  if (model.customType === "smartphone") {
+    return <Smartphone3D />;
+  }
+  if (model.customType === "instagram") {
+    return <Instagram3D />;
+  }
+  if (model.customType === "uiux") {
+    return <UIUX3D />;
+  }
+  if (model.modelPath) {
+    return <GLTFModel model={model} />;
+  }
+  return null;
+};
 
-        The group component is used to scale and rotate the model.
-        The rotation is set to the value of the model.rotation property,
-        which is an array of three values representing the rotation in
-        degrees around the x, y and z axes respectively.
+const TechIconCardExperience = ({ model }) => {
+  return (
+    <WebGLErrorBoundary fallback={<div className="w-full h-full" />}>
+      <Canvas
+        gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
+        camera={{ position: [0, 0, 5], fov: 45 }}
+        style={{ background: "transparent" }}
+      >
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[5, 5, 5]} intensity={1.5} />
+        <spotLight
+          position={[10, 15, 10]}
+          angle={0.3}
+          penumbra={1}
+          intensity={2}
+        />
+        <Environment preset="city" />
 
-        The primitive component is used to render the 3D model.
-        The object prop is set to the scene object returned by the
-        useGLTF hook, which is an instance of THREE.Group. The
-        THREE.Group object contains all the objects (meshes, lights, etc)
-        that make up the 3D model.
-      */}
-      <Float speed={5.5} rotationIntensity={0.5} floatIntensity={0.9}>
-        <group scale={model.scale} rotation={model.rotation}>
-          <primitive object={scene.scene} />
-        </group>
-      </Float>
+        <Float speed={4.5} rotationIntensity={0.6} floatIntensity={0.8}>
+          <Suspense fallback={null}>
+            <RenderModel model={model} />
+          </Suspense>
+        </Float>
 
-      <OrbitControls enableZoom={false} />
-    </Canvas>
+        <OrbitControls enableZoom={false} enablePan={false} />
+      </Canvas>
+    </WebGLErrorBoundary>
   );
 };
 

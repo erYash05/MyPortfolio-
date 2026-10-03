@@ -1,10 +1,10 @@
+import React from "react";
+import TitleHeader from "../TitleHeader";
+import { techStackIcons } from "../../constants";
+import { BackgroundGradient } from "../ui/background-gradient";
+import TechIconCardExperience from "../Models/TechLogos/TechIconCardExperience";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { techStackIcons } from "../../constants";
-import TechIconCardExperience from "../Models/TechLogos/TechIconCardExperience";
-import { BackgroundGradient } from "../ui/background-gradient";
-import { ColourfulText } from "../ui/text";
-import TitleHeader from "../TitleHeader";
 
 const TechStack = () => {
   // Animate the tech cards when scrolled into view
@@ -20,32 +20,22 @@ const TechStack = () => {
         stagger: 0.2,
         scrollTrigger: {
           trigger: "#skills",
-          start: "top center",
+          start: "top 80%",
         },
       }
     );
   });
 
   return (
-    <section id="skills" className="section-padding">
+    <div id="skills" className="w-full section-padding">
       {/* Section Header */}
-      <div className="w-full flex justify-center px-4 sm:px-6 lg:px-20  text-center">
-        <TitleHeader
-          sub="🥉Skills That Will Build My Future💻"
-        />
-      </div>
-
-      {/* Section Title */}
-      <div className="text-center mb-10">
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white font-sans leading-snug">
-          Modern
-          <ColourfulText text="Skills" /> <br /> I Work With
-        </h1>
+      <div className="w-full flex justify-center px-4 sm:px-6 lg:px-20 text-center">
+        <TitleHeader sub="🥉 Skills That Will Build My Future 💻" />
       </div>
 
       {/* Tech Grid */}
       <div className="w-full h-full md:px-10 px-5">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 place-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 place-items-center max-w-7xl mx-auto">
           {techStackIcons.map((techStackIcon) => (
             <BackgroundGradient
               key={techStackIcon.name}
@@ -64,7 +54,7 @@ const TechStack = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

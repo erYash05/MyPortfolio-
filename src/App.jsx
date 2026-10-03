@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import Hero from "./components/sections/Hero";
+import Services from "./components/sections/Services";
 import TechStack from "./components/sections/TechStack";
+import People from "./components/sections/People";
 import Contact from "./components/sections/Contect";
 import { FloatingNavDemo } from "./components/sections/NEvbar";
 import { ThreeDMarqueeDemo } from "./components/sections/Project";
@@ -53,11 +55,17 @@ const App = () => {
       <section id="hero">
         <Hero />
       </section>
+      <section id="services">
+        <Services />
+      </section>
       <section id="projects">
         <StickyScrollRevealDemo />
       </section>
       <section id="tech">
         <TechStack />
+      </section>
+      <section id="about">
+        <People />
       </section>
       <section id="content">
         <ThreeDMarqueeDemo />

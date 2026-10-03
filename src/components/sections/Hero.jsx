@@ -37,7 +37,7 @@ const Hero = () => {
         {/* Background */}
         <div className="w-[9rem]  absolute p-10  ">
           <img  className=" rounded-4xl"
-          src="../../../public/images/C1.png" alt="" />
+          src="/images/C1.png" alt="" />
         </div>
         <div className="absolute top-0 left-0 -z-10">
           <img src="/images/bg.png" alt="background" />
@@ -54,9 +54,9 @@ const Hero = () => {
                   Shaping
                   <span className="slide">
                     <span className="wrapper">
-                      {words.map((word) => (
+                      {words.map((word, index) => (
                         <span
-                          key={word.text}
+                          key={`${word.text}-${index}`}
                           className="flex items-center md:gap-3 gap-1 p-2"
                         >
                           <img

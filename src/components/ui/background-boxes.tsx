@@ -8,8 +8,8 @@ export const BoxesCore = ({
   className,
   ...rest
 }) => {
-  const rows = new Array(150).fill(1);
-  const cols = new Array(100).fill(1);
+  const rows = new Array(35).fill(1);
+  const cols = new Array(25).fill(1);
   let colors = [
     "#93c5fd",
     "#f9a8d4",

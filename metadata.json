@@ -1,0 +1,8 @@
+{
+  "name": "Yash Surywanshi Portfolio",
+  "description": "Interactive 3D portfolio of Yash Surywanshi, Frontend Developer and Creative Designer showcasing projects, modern skills, and web experiences.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

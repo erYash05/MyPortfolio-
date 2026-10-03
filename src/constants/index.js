@@ -95,20 +95,20 @@ const navLinks = [
       imgPath: "/images/logos/react.png",
     },
     {
-      name: "Python Developer",
-      imgPath: "/images/logos/python.svg",
+      name: "App Development",
+      imgPath: "/images/devices.png",
+    },
+    {
+      name: "UI/UX Design",
+      imgPath: "/images/designs.svg",
+    },
+    {
+      name: "Instagram / Social Media",
+      imgPath: "/images/insta.png",
     },
     {
       name: "Backend Developer",
       imgPath: "/images/logos/node.png",
-    },
-    {
-      name: "Interactive Developer",
-      imgPath: "/images/logos/three.png",
-    },
-    {
-      name: "Project Manager",
-      imgPath: "/images/logos/git.svg",
     },
   ];
   
@@ -120,9 +120,21 @@ const navLinks = [
       rotation: [0, 0, 0],
     },
     {
-      name: "Python Developer",
-      modelPath: "/models/python-transformed.glb",
-      scale: 0.8,
+      name: "App Development",
+      customType: "smartphone",
+      scale: 1,
+      rotation: [0, 0, 0],
+    },
+    {
+      name: "UI/UX Design",
+      customType: "uiux",
+      scale: 1,
+      rotation: [0, 0, 0],
+    },
+    {
+      name: "Instagram / Social Media",
+      customType: "instagram",
+      scale: 1,
       rotation: [0, 0, 0],
     },
     {
@@ -130,18 +142,6 @@ const navLinks = [
       modelPath: "/models/node-transformed.glb",
       scale: 5,
       rotation: [0, -Math.PI / 2, 0],
-    },
-    {
-      name: "Interactive Developer",
-      modelPath: "/models/three.js-transformed.glb",
-      scale: 0.05,
-      rotation: [0, 0, 0],
-    },
-    {
-      name: "Project Manager",
-      modelPath: "/models/git-svg-transformed.glb",
-      scale: 0.05,
-      rotation: [0, -Math.PI / 4, 0],
     },
   ];
   

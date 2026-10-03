@@ -5,16 +5,16 @@ import { ColourfulText } from "../ui/text";
 
 export function ThreeDMarqueeDemo() {
   const images = [
-    "../../../public/images/T8.jpeg",
+    "/images/T8.jpeg",
     "https://149367133.v2.pressablecdn.com/wp-content/uploads/2023/05/airbnb-rooms-app-update-Wishlist-Calendar-and-Notes-2023-Summer-Release-1024x576.jpg",
-    "../../../public/images/T6.jpeg",
+    "/images/T6.jpeg",
     "https://thfvnext.bing.com/th/id/OIP.eMDdgj2yVyeNt2w7dPq6OgHaFf?w=247&h=183&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
 
-    "../../../public/images/T7.jpeg",
+    "/images/T7.jpeg",
     "https://149367133.v2.pressablecdn.com/wp-content/uploads/2023/05/airbnb-rooms-app-update-Wishlist-Calendar-and-Notes-2023-Summer-Release-1024x576.jpg",
     "https://thfvnext.bing.com/th/id/OIP.eMDdgj2yVyeNt2w7dPq6OgHaFf?w=247&h=183&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
     "https://149367133.v2.pressablecdn.com/wp-content/uploads/2023/05/airbnb-rooms-app-update-Wishlist-Calendar-and-Notes-2023-Summer-Release-1024x576.jpg",
-    "../../../public/images/T6.jpeg",
+    "/images/T6.jpeg",
     "https://thfvnext.bing.com/th/id/OIP.7hXwNDJpe06qa1mlOrUb0wHaEK?w=307&h=180&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
     "https://thfvnext.bing.com/th/id/OIP.eMDdgj2yVyeNt2w7dPq6OgHaFf?w=247&h=183&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
     "https://thfvnext.bing.com/th/id/OIP.7hXwNDJpe06qa1mlOrUb0wHaEK?w=307&h=180&c=7&r=0&o=7&cb=thfvnext&dpr=1.3&pid=1.7&rm=3",
