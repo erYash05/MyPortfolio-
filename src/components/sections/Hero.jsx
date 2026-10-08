@@ -28,6 +28,7 @@ const Hero = () => {
     return () => ctx.revert();
   }, []);
 
+
   return (
     <div>
       <section id="hero" className="relative overflow-hidden z-10">
