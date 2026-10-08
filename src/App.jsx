@@ -39,10 +39,10 @@ const App = () => {
   }, []);
 
   return (
-    <main ref={mainRef} className="relative">
+    <main ref={mainRef} className="relative overflow-x-hidden w-full max-w-full">
       <div
         ref={cursorRef}
-        className="cursor z-20 w-6 h-6 bg-white fixed rounded-full pointer-events-none"
+        className="cursor z-20 w-6 h-6 bg-white fixed rounded-full pointer-events-none hidden md:block"
       ></div>
 
       {/* Full body background */}

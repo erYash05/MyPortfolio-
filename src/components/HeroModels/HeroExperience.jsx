@@ -13,14 +13,17 @@ const HeroExperience = () => {
 
   return (
     <WebGLErrorBoundary fallback={null}>
-      <Canvas camera={{ position: [0, 0, 14], fov: 45 }}>
+      <Canvas
+        camera={{ position: [0, 0, 14], fov: 45 }}
+        style={{ width: "100%", height: "100%", touchAction: "pan-y" }}
+      >
         <OrbitControls
           enablePan={false}
           enableZoom={!isTablet}
           maxDistance={20}
           minDistance={5}
           minPolarAngle={Math.PI / 5}
-          maxPolerAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI / 2}
         />
         <HeroLight />
         <Particles count={100} />

@@ -6,21 +6,23 @@ import { Smartphone3D, Instagram3D, UIUX3D } from "./Skill3DModels";
 import WebGLErrorBoundary from "../../WebGLErrorBoundary";
 
 const GLTFModel = ({ model }) => {
-  const scene = useGLTF(model.modelPath);
+  const gltf = useGLTF(model.modelPath);
 
   useEffect(() => {
-    if (model.name === "Interactive Developer") {
-      scene.scene.traverse((child) => {
+    if (model.name === "Interactive Developer" && gltf?.scene) {
+      gltf.scene.traverse((child) => {
         if (child.isMesh && child.name === "Object_5") {
           child.material = new THREE.MeshStandardMaterial({ color: "white" });
         }
       });
     }
-  }, [scene, model.name]);
+  }, [gltf, model.name]);
+
+  if (!gltf?.scene) return null;
 
   return (
     <group scale={model.scale} rotation={model.rotation}>
-      <primitive object={scene.scene} />
+      <primitive object={gltf.scene} />
     </group>
   );
 };

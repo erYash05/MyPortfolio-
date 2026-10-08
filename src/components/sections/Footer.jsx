@@ -10,18 +10,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Column 1: Brand / Studio Identity */}
           <div className="flex flex-col items-start space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 sm:gap-4 sm:pb-11">
               <img
-                src="/images/C1.png"
-                alt="Y2X Studio Logo"
-                className="w-12 h-12 rounded-2xl border border-white/10 shadow-lg object-contain bg-black/40 p-1"
+                src="/images/mark.png"
+                alt="Y2X Digital Growth Agency Logo"
+                className="w-14 sm:w-16 md:w-20 h-auto shrink-0 rounded-xl border border-white/10 shadow-lg object-contain bg-white/5 p-1"
               />
               <div>
-                <h3 className="text-lg font-bold text-white tracking-tight">
-                  Y2X Studio
+                <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                  Digital Growth Agency
                 </h3>
-                <p className="text-xs text-cyan-400 font-medium">
-                  Creative Technology & Design
+                <p className="text-[11px] sm:text-xs text-[#34D399] font-medium">
+                  Web · App · Social · Marketing · SEO
                 </p>
               </div>
             </div>

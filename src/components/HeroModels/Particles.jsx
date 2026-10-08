@@ -20,6 +20,7 @@ const Particles = ({ count = 200 }) => {
   }, [count]);
 
   useFrame(() => {
+    if (!mesh.current?.geometry?.attributes?.position?.array) return;
     const positions = mesh.current.geometry.attributes.position.array;
     for (let i = 0; i < count; i++) {
       let y = positions[i * 3 + 1];

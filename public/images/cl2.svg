@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap');
+      .title-text {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        fill: #9CA8F8;
+      }
+      .sub-text {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        fill: #9CA8F8;
+      }
+      .num-two {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        font-size: 155px;
+        font-weight: 600;
+        fill: #34D399;
+      }
+    </style>
+  </defs>
+
+  <!-- Top Row: Icon + "2" (Centered horizontally) -->
+  <g>
+    <!-- Squircle Icon Background -->
+    <rect x="250" y="72" width="144" height="144" rx="38" ry="38" fill="#ECEBFD" />
+
+    <!-- Network Branches / Nodes inside Squircle -->
+    <!-- Top-left to center branch -->
+    <line x1="298" y1="116" x2="322" y2="144" stroke="#1E1E4B" stroke-width="12" stroke-linecap="round" />
+    <!-- Top-right to center branch -->
+    <line x1="346" y1="116" x2="322" y2="144" stroke="#1E1E4B" stroke-width="12" stroke-linecap="round" />
+    <!-- Center to bottom-right branch -->
+    <line x1="322" y1="144" x2="346" y2="172" stroke="#10B981" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Nodes -->
+    <!-- Top-left node -->
+    <circle cx="298" cy="116" r="10" fill="#1E1E4B" />
+    <!-- Top-right node -->
+    <circle cx="346" cy="116" r="10" fill="#1E1E4B" />
+    <!-- Center node (white center with navy rim) -->
+    <circle cx="322" cy="144" r="11" fill="#FFFFFF" stroke="#1E1E4B" stroke-width="5" />
+    <!-- Bottom-right node -->
+    <circle cx="346" cy="172" r="10" fill="#10B981" />
+
+    <!-- Bottom-left accents -->
+    <!-- Small ring circle -->
+    <circle cx="292" cy="172" r="9" fill="none" stroke="#34D399" stroke-width="4" />
+    <circle cx="292" cy="172" r="2.5" fill="#34D399" />
+    <!-- Floating tiny dot -->
+    <circle cx="308" cy="156" r="3.5" fill="#6EE7B7" />
+
+    <!-- Number "2" -->
+    <text x="445" y="196" class="num-two">2</text>
+  </g>
+
+  <!-- Bottom Text & Line -->
+  <!-- DIGITAL GROWTH AGENCY -->
+  <text x="400" y="315" text-anchor="middle" class="title-text">DIGITAL GROWTH AGENCY</text>
+
+  <!-- Emerald Separator Line -->
+  <line x1="270" y1="345" x2="530" y2="345" stroke="#34D399" stroke-width="3.5" stroke-linecap="round" />
+
+  <!-- Web · App · Social · Marketing · SEO -->
+  <text x="400" y="398" text-anchor="middle" class="sub-text">Web · App · Social · Marketing · SEO</text>
+</svg>

@@ -48,20 +48,20 @@ const Contact = () => {
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader sub="💬 Have questions or ideas? Let’s talk! 🚀" />
 
-        <div className="flex items-center justify-center ">
+        <div className="flex items-center justify-center w-full max-w-full overflow-hidden px-2 sm:px-4">
           <TextRevealCard
-            className="h-[10rem] w-20rem flex items-center justify-center"
+            className="h-28 sm:h-36 w-full max-w-md sm:max-w-xl flex items-center justify-center"
             text="I Found You Intresting "
             revealText="Let's Connect  "
           />
         </div>
 
-        <div className="grid-12-cols mt-16">
+        <div className="grid-12-cols mt-10 md:mt-16">
           <div className="xl:col-span-5">
-            <div className="flex-center card-border rounded-xl p-10">
+            <div className="flex-center card-border rounded-xl p-5 sm:p-8 md:p-10">
               <form
                 onSubmit={handleSubmit}
-                className="w-full flex flex-col gap-7"
+                className="w-full flex flex-col gap-5 sm:gap-7"
               >
                 <div>
                   <label htmlFor="name">Your name</label>

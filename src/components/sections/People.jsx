@@ -13,9 +13,10 @@ import {
   FiUserCheck,
 } from "react-icons/fi";
 
-import yashPortrait from "../../assets/images/profile_yash_portrait_1791035586159.jpg";
-import sarahPortrait from "../../assets/images/profile_sarah_portrait_1791035599754.jpg";
-import marcusPortrait from "../../assets/images/profile_marcus_portrait_1791035611411.jpg";
+import yashSuryavanshiPortrait from "../../assets/images/yash_suryawanshi_exact_1791460949027.jpg";
+import yashHarodePortrait from "../../assets/images/yash_harode_exact_1791460960257.jpg";
+import lavishaChandraniPortrait from "../../assets/images/lavisha_chandrani_exact_1791460973442.jpg";
+import yogendraChouhanPortrait from "../../assets/images/yogendra_chouhan_portrait_1791101961628.jpg";
 
 export const peopleData = [
   {
@@ -23,8 +24,8 @@ export const peopleData = [
     name: "Yash Suryavanshi",
     role: "Frontend Developer & 3D Specialist",
     tagline: "Bridging the gap between creative visual artistry and production-grade engineering.",
-    bio: "Obsessed with interactive web systems, WebGL rendering, and fluid micro-interactions. Over the past 3+ years, I have architected high-performance digital products that blend immersive 3D experiences with rigorous engineering standards to help modern brands stand out.",
-    image: yashPortrait,
+    bio: "Obsessed with interactive web systems, WebGL rendering, and fluid micro-interactions. Over the past 3+ years, Yash has architected high-performance digital products that blend immersive 3D experiences with rigorous engineering standards to help modern brands stand out.",
+    image: yashSuryavanshiPortrait,
     stats: [
       { label: "Experience", value: "3+ Years" },
       { label: "Projects Delivered", value: "24+" },
@@ -44,63 +45,91 @@ export const peopleData = [
       twitter: "https://x.com/Su_yash05",
     },
     location: "Global / Remote",
-    status: "Available for High-Impact Projects",
+    status: "Crafting Interactive Frontends",
   },
   {
-    id: "sarah-chen",
-    name: "Sarah Chen",
-    role: "Lead UI/UX Designer",
-    tagline: "Crafting intuitive digital ecosystems that simplify complexity and captivate audiences.",
-    bio: "With a background in cognitive psychology and visual communications, Sarah transforms complex customer workflows into elegant, friction-free interfaces. She specializes in design systems, accessible typography, and interactive prototyping from zero to scale.",
-    image: sarahPortrait,
+    id: "yash-harode",
+    name: "Yash Harode",
+    role: "Backend Developer & Cloud Architect",
+    tagline: "Engineering bulletproof backends, distributed systems, and real-time cloud architectures.",
+    bio: "Specializing in high-throughput backend services, resilient database schemas, and microservice orchestration. Yash develops high-performance REST & GraphQL APIs, real-time WebSocket pipelines, and automated cloud deployments designed to handle enterprise workloads with zero downtime.",
+    image: yashHarodePortrait,
     stats: [
-      { label: "Design Systems", value: "18+" },
-      { label: "Global Clients", value: "30+" },
-      { label: "User Retention Lift", value: "+42%" },
+      { label: "System Uptime", value: "99.99%" },
+      { label: "APIs & Services", value: "35+" },
+      { label: "Query Latency", value: "<40ms" },
     ],
     skills: [
-      "Figma Systems & Tokens",
-      "User Journey Mapping",
-      "Interaction Architecture",
-      "Rapid Wireframing",
-      "WCAG 2.1 AA Accessibility",
+      "Node.js & NestJS",
+      "PostgreSQL & MongoDB",
+      "Redis & Message Queues",
+      "Docker & Cloud Systems",
+      "API Security & Microservices",
     ],
-    quote: "Great design is not just what looks good—it is what removes friction effortlessly.",
+    quote: "A reliable backend is the invisible bedrock that turns ambitious ideas into scalable reality.",
+    socials: {
+      github: "https://github.com/",
+      linkedin: "https://www.linkedin.com/",
+      twitter: "https://x.com/",
+    },
+    location: "Global / Remote",
+    status: "Architecting Scalable Microservices",
+  },
+  {
+    id: "lavisha-chandrani",
+    name: "Lavisha Chandrani",
+    role: "Marketing & Social Media Lead",
+    tagline: "Amplifying brand narratives, viral social reach, and authentic community engagement.",
+    bio: "Lavisha spearheads comprehensive social media handle management, brand positioning, and viral digital campaigns. She crafts compelling visual storytelling, orchestrates multi-platform brand channels, and builds active creator communities that turn audience attention into lasting brand loyalty.",
+    image: lavishaChandraniPortrait,
+    stats: [
+      { label: "Social Reach", value: "2.8M+" },
+      { label: "Engagement Lift", value: "+185%" },
+      { label: "Brand Campaigns", value: "45+" },
+    ],
+    skills: [
+      "Social Media Management",
+      "Viral Content Curation",
+      "Community Growth & Retention",
+      "Influencer Partnerships",
+      "Brand Storytelling & Copywriting",
+    ],
+    quote: "In a world of noise, authenticity and compelling storytelling are the ultimate growth engines.",
+    socials: {
+      linkedin: "https://www.linkedin.com/",
+      instagram: "https://instagram.com/",
+      twitter: "https://x.com/",
+    },
+    location: "Global / Remote",
+    status: "Directing Creative Social Campaigns",
+  },
+  {
+    id: "yogendra-chouhan",
+    name: "Yogendra Chouhan",
+    role: "Digital Marketing & SEO Strategist",
+    tagline: "Mastering omnichannel performance marketing, search dominance, and conversion acceleration.",
+    bio: "Yogendra specializes in data-driven digital marketing and advanced SEO architecture. He develops full-funnel acquisition playbooks, high-ROI paid media strategies, and organic search optimization that maximize customer lifetime value and establish dominant market presence.",
+    image: yogendraChouhanPortrait,
+    stats: [
+      { label: "Ad Spend Managed", value: "$1.8M+" },
+      { label: "Avg. ROAS", value: "4.9x" },
+      { label: "Organic Search Lift", value: "+260%" },
+    ],
+    skills: [
+      "Technical SEO & Audits",
+      "Performance Marketing (Google/Meta)",
+      "Conversion Rate Optimization (CRO)",
+      "Analytics & GA4 Architecture",
+      "Omnichannel Attribution Loops",
+    ],
+    quote: "Visibility without conversion is vanity; real growth is measured in sustainable, compounding revenue.",
     socials: {
       linkedin: "https://www.linkedin.com/",
       twitter: "https://x.com/",
       instagram: "https://instagram.com/",
     },
-    location: "San Francisco / Remote",
-    status: "Leading Design Sprints",
-  },
-  {
-    id: "marcus-vance",
-    name: "Marcus Vance",
-    role: "Digital Marketing & Growth Specialist",
-    tagline: "Engineering measurable customer acquisition loops and organic brand authority.",
-    bio: "Marcus drives digital visibility and revenue growth through omnichannel performance marketing, deep technical SEO, and compelling content strategy. He aligns paid and organic funnels to build scalable brand equity and sustainable inbound pipelines.",
-    image: marcusPortrait,
-    stats: [
-      { label: "Ad Spend Managed", value: "$1.4M+" },
-      { label: "Avg. ROAS", value: "4.8x" },
-      { label: "Organic Search Growth", value: "+210%" },
-    ],
-    skills: [
-      "Technical SEO & Content Hubs",
-      "Paid Search & Social Campaigns",
-      "Conversion Rate Optimization (CRO)",
-      "Omnichannel Attribution",
-      "Analytics & GA4 Architecture",
-    ],
-    quote: "Visibility without conversion is vanity; real growth is measured in authentic engagement.",
-    socials: {
-      linkedin: "https://www.linkedin.com/",
-      twitter: "https://x.com/",
-      github: "https://github.com/",
-    },
-    location: "New York / Remote",
-    status: "Scaling Strategic Campaigns",
+    location: "Global / Remote",
+    status: "Scaling Strategic Inbound Funnels",
   },
 ];
 
@@ -165,13 +194,13 @@ const People = () => {
         </div>
 
         {/* Editorial Split Layout */}
-        <div className="bg-[#12131e]/90 border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-12 backdrop-blur-xl shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="bg-[#12131e]/90 border border-white/10 rounded-3xl p-4 sm:p-8 lg:p-12 backdrop-blur-xl shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             {/* Column 1: Interactive Stack of Cards (Cards clearly peek out underneath) */}
             <div className="lg:col-span-5 flex flex-col items-center justify-center">
               <div
                 onClick={handleNextPerson}
-                className="group relative w-full max-w-[300px] sm:max-w-[340px] aspect-[3/4] cursor-pointer select-none my-6 mx-auto"
+                className="group relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] aspect-[3/4] cursor-pointer select-none my-6 mx-auto"
                 title="Click card stack to view next profile"
               >
                 {/* Ambient Radial Glow */}
@@ -181,14 +210,14 @@ const People = () => {
                 <motion.div
                   key={`stack-back-2-${nextPerson2.id}`}
                   animate={{
-                    x: 24,
-                    y: -22,
+                    x: 20,
+                    y: -18,
                     rotate: 8,
                     scale: 0.94,
                   }}
                   whileHover={{
-                    x: 32,
-                    y: -28,
+                    x: 28,
+                    y: -24,
                     rotate: 11,
                     scale: 0.96,
                   }}
@@ -212,14 +241,14 @@ const People = () => {
                 <motion.div
                   key={`stack-back-1-${nextPerson1.id}`}
                   animate={{
-                    x: -22,
-                    y: 16,
+                    x: -18,
+                    y: 14,
                     rotate: -6,
                     scale: 0.97,
                   }}
                   whileHover={{
-                    x: -30,
-                    y: 22,
+                    x: -26,
+                    y: 20,
                     rotate: -9,
                     scale: 0.99,
                   }}
@@ -276,14 +305,14 @@ const People = () => {
                   </div>
 
                   {/* Front Card Overlay Details */}
-                  <div className="absolute bottom-4 left-4 right-4 z-10 p-4 rounded-xl bg-black/85 backdrop-blur-md border border-white/15 shadow-xl">
-                    <h4 className="text-lg font-bold text-white leading-tight">
+                  <div className="absolute bottom-4 left-4 right-4 z-10 p-3 sm:p-4 rounded-xl bg-black/85 backdrop-blur-md border border-white/15 shadow-xl">
+                    <h4 className="text-base sm:text-lg font-bold text-white leading-tight">
                       {activePerson.name}
                     </h4>
                     <p className="text-xs text-cyan-300 font-medium mt-0.5">
                       {activePerson.role}
                     </p>
-                    <div className="mt-2 flex items-center gap-2 text-[11px] text-neutral-300">
+                    <div className="mt-1.5 sm:mt-2 flex items-center gap-2 text-[10px] sm:text-[11px] text-neutral-300">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                       <span>{activePerson.status}</span>
                     </div>
@@ -294,7 +323,7 @@ const People = () => {
               {/* Click prompt beneath image */}
               <button
                 onClick={handleNextPerson}
-                className="mt-6 flex items-center gap-2 text-xs text-neutral-400 hover:text-cyan-300 transition-colors cursor-pointer group"
+                className="mt-4 sm:mt-6 flex items-center gap-2 text-xs text-neutral-400 hover:text-cyan-300 transition-colors cursor-pointer group"
               >
                 <span>Cycle through stacked cards</span>
                 <FiArrowRight className="w-3.5 h-3.5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
@@ -319,31 +348,31 @@ const People = () => {
                     <span className="text-neutral-400">{activePerson.location}</span>
                   </div>
 
-                  <h3 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                     {activePerson.name}
                   </h3>
 
-                  <p className="mt-1 text-base sm:text-lg font-semibold text-cyan-300">
+                  <p className="mt-1 text-sm sm:text-base lg:text-lg font-semibold text-cyan-300">
                     {activePerson.role}
                   </p>
 
-                  <p className="mt-4 text-sm sm:text-base text-neutral-300 italic font-serif leading-relaxed border-l-2 border-cyan-400/50 pl-4 py-1">
+                  <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-neutral-300 italic font-serif leading-relaxed border-l-2 border-cyan-400/50 pl-3 sm:pl-4 py-1">
                     "{activePerson.quote}"
                   </p>
 
                   {/* Biography Prose */}
-                  <p className="mt-5 text-sm sm:text-base text-neutral-300 leading-relaxed">
+                  <p className="mt-4 sm:mt-5 text-xs sm:text-sm md:text-base text-neutral-300 leading-relaxed">
                     {activePerson.bio}
                   </p>
 
                   {/* Quantitative Track Record Metrics */}
-                  <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                  <div className="mt-6 sm:mt-8 grid grid-cols-3 gap-2 sm:gap-4 p-3 sm:p-4 rounded-2xl bg-white/[0.03] border border-white/10">
                     {activePerson.stats.map((stat, sIdx) => (
                       <div key={sIdx} className="text-center sm:text-left">
-                        <div className="text-xl sm:text-2xl font-extrabold text-white font-mono tabular-nums">
+                        <div className="text-lg sm:text-2xl font-extrabold text-white font-mono tabular-nums">
                           {stat.value}
                         </div>
-                        <div className="text-[11px] sm:text-xs text-neutral-400 mt-0.5">
+                        <div className="text-[10px] sm:text-xs text-neutral-400 mt-0.5 line-clamp-1 sm:line-clamp-none">
                           {stat.label}
                         </div>
                       </div>
