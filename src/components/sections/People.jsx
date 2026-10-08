@@ -13,10 +13,10 @@ import {
   FiUserCheck,
 } from "react-icons/fi";
 
-import yashSuryavanshiPortrait from "../../assets/images/yash_suryawanshi_exact_1791460949027.jpg";
-import yashHarodePortrait from "../../assets/images/yash_harode_exact_1791460960257.jpg";
-import lavishaChandraniPortrait from "../../assets/images/lavisha_chandrani_exact_1791460973442.jpg";
-import yogendraChouhanPortrait from "../../assets/images/yogendra_chouhan_portrait_1791101961628.jpg";
+import yashSuryavanshiPortrait from "../../assets/images/yashsurywanshi.png"
+import yashHarodePortrait from "../../assets/images/yashharode.jpeg";
+import lavishaChandraniPortrait from "../../assets/images/lavisha.png";
+
 
 export const peopleData = [
   {
@@ -103,13 +103,44 @@ export const peopleData = [
     location: "Global / Remote",
     status: "Directing Creative Social Campaigns",
   },
+  
+{
+  id: "prasun-solanki",
+  name: "Prasun Solanki",
+  role: "SEO Specialist & UI/UX Designer",
+  tagline: "Combining search visibility with intuitive design to create digital experiences that attract, engage, and convert.",
+  bio: "Focused on search engine optimization and user-centered design, Prasun combines data-driven SEO strategies with thoughtful UI/UX principles to build seamless digital experiences. From keyword research and technical SEO to wireframing, prototyping, and usability optimization, he helps businesses improve online visibility while creating intuitive, accessible, and engaging user journeys.",
+ 
+  stats: [
+    { label: "SEO Experience", value: "1+ Year" },
+    { label: "Projects Completed", value: "10+" },
+    { label: "Designs & Audits", value: "100+" },
+  ],
+  skills: [
+    "Technical SEO & Keyword Research",
+    "On-Page SEO & Content Optimization",
+    "UI/UX Design & User Research",
+    "Wireframing & Interactive Prototyping",
+    "Figma & Responsive Design",
+    "Usability Testing & Conversion Optimization",
+  ],
+  quote: "Great digital experiences make it easy to discover, understand, and connect with a brand.",
+  socials: {
+    github: "",
+    linkedin: "",
+    twitter: "",
+  },
+  location: "Global / Remote",
+  status: "Designing Better Experiences & Growing Visibility",
+}
+,
   {
     id: "yogendra-chouhan",
     name: "Yogendra Chouhan",
-    role: "Digital Marketing & SEO Strategist",
+    role: "Digital Marketing ",
     tagline: "Mastering omnichannel performance marketing, search dominance, and conversion acceleration.",
     bio: "Yogendra specializes in data-driven digital marketing and advanced SEO architecture. He develops full-funnel acquisition playbooks, high-ROI paid media strategies, and organic search optimization that maximize customer lifetime value and establish dominant market presence.",
-    image: yogendraChouhanPortrait,
+   
     stats: [
       { label: "Ad Spend Managed", value: "$1.8M+" },
       { label: "Avg. ROAS", value: "4.9x" },
@@ -130,7 +161,8 @@ export const peopleData = [
     },
     location: "Global / Remote",
     status: "Scaling Strategic Inbound Funnels",
-  },
+  }
+
 ];
 
 const People = () => {
@@ -398,65 +430,7 @@ const People = () => {
                   </div>
 
                   {/* Connect & Social Channels */}
-                  <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs text-neutral-400 font-medium">
-                        Connect with {activePerson.name.split(" ")[0]}:
-                      </span>
-                      {activePerson.socials.github && (
-                        <a
-                          href={activePerson.socials.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-white transition-colors"
-                          aria-label="GitHub profile"
-                        >
-                          <FiGithub className="w-4 h-4" />
-                        </a>
-                      )}
-                      {activePerson.socials.linkedin && (
-                        <a
-                          href={activePerson.socials.linkedin}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-white transition-colors"
-                          aria-label="LinkedIn profile"
-                        >
-                          <FiLinkedin className="w-4 h-4" />
-                        </a>
-                      )}
-                      {activePerson.socials.twitter && (
-                        <a
-                          href={activePerson.socials.twitter}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-white transition-colors"
-                          aria-label="Twitter profile"
-                        >
-                          <FiTwitter className="w-4 h-4" />
-                        </a>
-                      )}
-                      {activePerson.socials.instagram && (
-                        <a
-                          href={activePerson.socials.instagram}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-white transition-colors"
-                          aria-label="Instagram profile"
-                        >
-                          <FiInstagram className="w-4 h-4" />
-                        </a>
-                      )}
-                    </div>
-
-                    <a
-                      href="#contact"
-                      className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
-                    >
-                      <span>Collaborate With Us</span>
-                      <FiArrowRight className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
+                
                 </motion.div>
               </AnimatePresence>
             </div>

@@ -111,7 +111,7 @@ const Footer = () => {
             </p>
             <div className="flex flex-wrap gap-2.5">
               <a
-                href="https://github.com/erYashSurywanshi"
+                href="https://github.com/erYash05/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
@@ -120,7 +120,7 @@ const Footer = () => {
                 <FaGithub size={18} />
               </a>
               <a
-                href="https://www.linkedin.com/in/yash-surywanshi-81714a366/"
+                href="www.linkedin.com/in/y2x-solution-411511442/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
@@ -138,7 +138,7 @@ const Footer = () => {
                 <FaTwitter size={18} />
               </a>
               <a
-                href="https://instagram.com/"
+                href="https://www.instagram.com/y2x_20/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"

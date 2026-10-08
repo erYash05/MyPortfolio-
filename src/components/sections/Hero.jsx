@@ -28,7 +28,6 @@ const Hero = () => {
     return () => ctx.revert();
   }, []);
 
-
   return (
     <div>
       <section id="hero" className="relative overflow-hidden z-10">
@@ -73,12 +72,12 @@ const Hero = () => {
                 <h1>into Real Project</h1>
                 <h1>That deliver Result</h1>
               </div>
-
+              
               <p className="text-white-50 text-base md:text-xl relative z-10 pointer-events-none max-w-xl">
-                ✨ Hi, I am <ColourfulText text="YASH" /> <br />
-                and I park all of my <ColourfulText text="Experience" /> into this site.
+                ✨ We are <ColourfulText text="Y2X" /> <br />
+                your partner in <ColourfulText text="Digital Growth" />.
               </p>
-
+            
               <div className="pointer-events-auto w-full">
                 <Button
                   className="w-[30%] min-w-[190px] h-12 md:h-16"
