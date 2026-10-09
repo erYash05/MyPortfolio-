@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { cn } from "../../../lib/utils";
+import { useInView, usePrefersReducedMotion } from "../../utils/usePerformance";
 
 export const BackgroundGradient = ({
   children,
@@ -8,7 +9,17 @@ export const BackgroundGradient = ({
   containerClassName,
   radiusClassName = "rounded-2xl sm:rounded-3xl",
   animate = true,
+}: {
+  children?: React.ReactNode;
+  className?: string;
+  containerClassName?: string;
+  radiusClassName?: string;
+  animate?: boolean;
 }) => {
+  const { ref, inView } = useInView({ rootMargin: "100px 0px" });
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const shouldAnimate = animate && inView && !prefersReducedMotion;
+
   const variants = {
     initial: {
       backgroundPosition: "0 50%",
@@ -19,26 +30,29 @@ export const BackgroundGradient = ({
   };
 
   return (
-    <div className={cn("relative p-[3px] group", radiusClassName, containerClassName)}>
+    <div
+      ref={ref}
+      className={cn("relative p-[2px] sm:p-[3px] group", radiusClassName, containerClassName)}
+    >
       {/* Blurred ambient glow layer */}
       <motion.div
-        variants={animate ? variants : undefined}
-        initial={animate ? "initial" : undefined}
-        animate={animate ? "animate" : undefined}
+        variants={shouldAnimate ? variants : undefined}
+        initial={shouldAnimate ? "initial" : undefined}
+        animate={shouldAnimate ? "animate" : undefined}
         transition={
-          animate
+          shouldAnimate
             ? {
-                duration: 5,
+                duration: 6,
                 repeat: Infinity,
                 repeatType: "reverse",
               }
             : undefined
         }
         style={{
-          backgroundSize: animate ? "400% 400%" : undefined,
+          backgroundSize: shouldAnimate ? "400% 400%" : undefined,
         }}
         className={cn(
-          "absolute inset-0 z-[1] opacity-40 group-hover:opacity-85 blur-lg transition duration-500 will-change-transform pointer-events-none",
+          "absolute inset-0 z-[1] opacity-35 group-hover:opacity-80 blur-md transition-opacity duration-500 pointer-events-none",
           radiusClassName,
           "bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
         )}
@@ -46,23 +60,23 @@ export const BackgroundGradient = ({
 
       {/* Sharp gradient border layer matching exact radius */}
       <motion.div
-        variants={animate ? variants : undefined}
-        initial={animate ? "initial" : undefined}
-        animate={animate ? "animate" : undefined}
+        variants={shouldAnimate ? variants : undefined}
+        initial={shouldAnimate ? "initial" : undefined}
+        animate={shouldAnimate ? "animate" : undefined}
         transition={
-          animate
+          shouldAnimate
             ? {
-                duration: 5,
+                duration: 6,
                 repeat: Infinity,
                 repeatType: "reverse",
               }
             : undefined
         }
         style={{
-          backgroundSize: animate ? "400% 400%" : undefined,
+          backgroundSize: shouldAnimate ? "400% 400%" : undefined,
         }}
         className={cn(
-          "absolute inset-0 z-[1] will-change-transform pointer-events-none",
+          "absolute inset-0 z-[1] pointer-events-none",
           radiusClassName,
           "bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
         )}
@@ -77,3 +91,4 @@ export const BackgroundGradient = ({
 };
 
 export default BackgroundGradient;
+

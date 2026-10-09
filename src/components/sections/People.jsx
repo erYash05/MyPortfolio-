@@ -13,9 +13,11 @@ import {
   FiUserCheck,
 } from "react-icons/fi";
 
-import yashSuryavanshiPortrait from "../../assets/images/yashsurywanshi.png"
+import yashSuryavanshiPortrait from "../../assets/images/yashsurywanshi.png";
 import yashHarodePortrait from "../../assets/images/yashharode.jpeg";
 import lavishaChandraniPortrait from "../../assets/images/lavisha.png";
+import yogendraPortrait from "../../assets/images/yogendra.png";
+import prasunPortrait from "/images/T3.jpeg";
 
 
 export const peopleData = [
@@ -110,7 +112,7 @@ export const peopleData = [
   role: "SEO Specialist & UI/UX Designer",
   tagline: "Combining search visibility with intuitive design to create digital experiences that attract, engage, and convert.",
   bio: "Focused on search engine optimization and user-centered design, Prasun combines data-driven SEO strategies with thoughtful UI/UX principles to build seamless digital experiences. From keyword research and technical SEO to wireframing, prototyping, and usability optimization, he helps businesses improve online visibility while creating intuitive, accessible, and engaging user journeys.",
- 
+  image: prasunPortrait,
   stats: [
     { label: "SEO Experience", value: "1+ Year" },
     { label: "Projects Completed", value: "10+" },
@@ -132,15 +134,14 @@ export const peopleData = [
   },
   location: "Global / Remote",
   status: "Designing Better Experiences & Growing Visibility",
-}
-,
+},
   {
     id: "yogendra-chouhan",
     name: "Yogendra Chouhan",
-    role: "Digital Marketing ",
+    role: "Digital Marketing",
     tagline: "Mastering omnichannel performance marketing, search dominance, and conversion acceleration.",
     bio: "Yogendra specializes in data-driven digital marketing and advanced SEO architecture. He develops full-funnel acquisition playbooks, high-ROI paid media strategies, and organic search optimization that maximize customer lifetime value and establish dominant market presence.",
-   
+    image: yogendraPortrait,
     stats: [
       { label: "Ad Spend Managed", value: "$1.8M+" },
       { label: "Avg. ROAS", value: "4.9x" },
@@ -181,16 +182,16 @@ const People = () => {
   };
 
   return (
-    <section id="about" className="w-full section-padding relative z-20 overflow-hidden">
+    <div className="w-full section-padding relative z-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-12 md:mb-16">
+        <div className="flex flex-col items-center text-center mb-8 sm:mb-12">
           <TitleHeader sub="👥 Creative Leadership & Profiles 🌟" />
-          <h2 className="mt-6 text-2xl md:text-4xl lg:text-5xl font-extrabold text-white font-sans leading-snug">
+          <h2 className="mt-4 sm:mt-6 text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-sans leading-snug">
             A Little Bit About <ColourfulText text="Our Team" /> <br />
             Behind Every Launch
           </h2>
-          <p className="mt-4 max-w-2xl text-neutral-400 text-sm md:text-base">
+          <p className="mt-3 sm:mt-4 max-w-2xl text-neutral-400 text-xs sm:text-sm md:text-base leading-relaxed">
             Click the card stack or select a team member below to cycle
             through our multidisciplinary leads and discover our approach to
             building next-generation digital products.
@@ -198,26 +199,27 @@ const People = () => {
         </div>
 
         {/* Profile Tabs Selector */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-8 sm:mb-12">
           {peopleData.map((person, idx) => {
             const isActive = idx === currentIndex;
             return (
               <button
+                type="button"
                 key={person.id}
                 onClick={() => handleSelectPerson(idx)}
-                className={`flex items-center gap-2.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 cursor-pointer ${
+                className={`flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-300 cursor-pointer ${
                   isActive
                     ? "bg-white text-black font-semibold shadow-lg shadow-white/10"
                     : "bg-white/5 text-neutral-300 hover:bg-white/10 hover:text-white border border-white/5"
                 }`}
               >
                 <span
-                  className={`w-2 h-2 rounded-full ${
+                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full shrink-0 ${
                     isActive ? "bg-cyan-500" : "bg-neutral-500"
                   }`}
                 />
                 <span className="truncate">{person.name}</span>
-                <span className="hidden sm:inline text-[11px] opacity-60">
+                <span className="hidden md:inline text-[11px] opacity-60">
                   / {person.role.split("&")[0].trim()}
                 </span>
               </button>
@@ -226,76 +228,66 @@ const People = () => {
         </div>
 
         {/* Editorial Split Layout */}
-        <div className="bg-[#12131e]/90 border border-white/10 rounded-3xl p-4 sm:p-8 lg:p-12 backdrop-blur-xl shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-            {/* Column 1: Interactive Stack of Cards (Cards clearly peek out underneath) */}
+        <div className="bg-[#12131e]/90 border border-white/10 rounded-2xl sm:rounded-3xl p-4 xs:p-5 sm:p-8 lg:p-12 shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+            {/* Column 1: Interactive Stack of Cards */}
             <div className="lg:col-span-5 flex flex-col items-center justify-center">
               <div
                 onClick={handleNextPerson}
-                className="group relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] aspect-[3/4] cursor-pointer select-none my-6 mx-auto"
+                className="group relative w-full max-w-[210px] xs:max-w-[235px] sm:max-w-[280px] md:max-w-[320px] aspect-[3/4] cursor-pointer select-none my-4 sm:my-6 mx-auto"
                 title="Click card stack to view next profile"
               >
                 {/* Ambient Radial Glow */}
-                <div className="absolute inset-0 bg-cyan-500/20 rounded-3xl blur-3xl transform scale-110 pointer-events-none" />
+                <div className="absolute inset-0 bg-cyan-500/15 rounded-3xl blur-2xl transform scale-105 pointer-events-none" />
 
-                {/* Card 3: Deepest under-card (peeks out visibly to TOP-RIGHT) */}
+                {/* Card 3: Deepest under-card */}
                 <motion.div
                   key={`stack-back-2-${nextPerson2.id}`}
                   animate={{
-                    x: 20,
-                    y: -18,
-                    rotate: 8,
+                    x: 12,
+                    y: -12,
+                    rotate: 6,
                     scale: 0.94,
                   }}
-                  whileHover={{
-                    x: 28,
-                    y: -24,
-                    rotate: 11,
-                    scale: 0.96,
-                  }}
-                  transition={{ type: "spring", stiffness: 280, damping: 22 }}
-                  className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-amber-400/50 bg-[#1a1829] shadow-[0_20px_50px_rgba(0,0,0,0.85)] z-0"
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-amber-400/50 bg-[#1a1829] shadow-xl z-0"
                 >
                   <img
                     src={nextPerson2.image}
                     alt={nextPerson2.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-top filter brightness-80 contrast-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
 
-                  {/* Peeking Badge on top right of deepest card */}
-                  <div className="absolute top-3 right-3 px-2 py-1 rounded-md bg-amber-400 text-black text-[10px] font-bold font-mono shadow-md">
+                  <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-amber-400 text-black text-[10px] font-bold font-mono shadow-md">
                     03 · {nextPerson2.name.split(" ")[0]}
                   </div>
                 </motion.div>
 
-                {/* Card 2: Middle under-card (peeks out visibly to BOTTOM-LEFT) */}
+                {/* Card 2: Middle under-card */}
                 <motion.div
                   key={`stack-back-1-${nextPerson1.id}`}
                   animate={{
-                    x: -18,
-                    y: 14,
-                    rotate: -6,
+                    x: -12,
+                    y: 10,
+                    rotate: -5,
                     scale: 0.97,
                   }}
-                  whileHover={{
-                    x: -26,
-                    y: 20,
-                    rotate: -9,
-                    scale: 0.99,
-                  }}
-                  transition={{ type: "spring", stiffness: 280, damping: 22 }}
-                  className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-purple-400/60 bg-[#161726] shadow-[0_25px_60px_rgba(0,0,0,0.9)] z-10"
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-purple-400/60 bg-[#161726] shadow-xl z-10"
                 >
                   <img
                     src={nextPerson1.image}
                     alt={nextPerson1.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-top filter brightness-90 contrast-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
-                  {/* Peeking Badge on left of middle card */}
-                  <div className="absolute bottom-4 left-3 px-2 py-1 rounded-md bg-purple-500 text-white text-[10px] font-bold font-mono shadow-md">
+                  <div className="absolute bottom-3.5 left-2.5 px-2 py-0.5 rounded-md bg-purple-500 text-white text-[10px] font-bold font-mono shadow-md">
                     02 · {nextPerson1.name.split(" ")[0]}
                   </div>
                 </motion.div>
@@ -303,7 +295,7 @@ const People = () => {
                 {/* Card 1: Front Active Card */}
                 <motion.div
                   key={`stack-front-${activePerson.id}`}
-                  initial={{ scale: 0.92, y: 15, opacity: 0.8 }}
+                  initial={{ scale: 0.95, opacity: 0.85 }}
                   animate={{
                     x: 0,
                     y: 0,
@@ -311,42 +303,39 @@ const People = () => {
                     scale: 1,
                     opacity: 1,
                   }}
-                  whileHover={{
-                    rotate: 0,
-                    scale: 1.02,
-                  }}
-                  transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                  className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-cyan-400/80 bg-[#11121d] shadow-[0_30px_70px_rgba(0,0,0,0.95)] z-20 group-hover:border-cyan-300 transition-colors"
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="absolute inset-0 rounded-2xl overflow-hidden border-2 border-cyan-400/80 bg-[#11121d] shadow-2xl z-20 group-hover:border-cyan-300 transition-colors"
                 >
                   <img
                     src={activePerson.image}
                     alt={activePerson.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
-                  {/* Scrim gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent" />
 
                   {/* Top Stack Indicator Badge */}
-                  <div className="absolute top-4 left-4 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] text-white font-medium shadow-lg">
-                    <FiRepeat className="w-3.5 h-3.5 text-cyan-400 animate-spin-slow" />
-                    <span>Click stack to cycle</span>
+                  <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/80 border border-white/20 text-[10px] sm:text-[11px] text-white font-medium shadow-lg">
+                    <FiRepeat className="w-3 h-3 text-cyan-400 shrink-0" />
+                    <span>Click to cycle</span>
                     <span className="text-neutral-400">·</span>
-                    <span className="font-mono text-cyan-300 font-bold">
+                    <span className="font-mono text-cyan-300 font-bold tabular-nums">
                       0{currentIndex + 1} / 0{peopleData.length}
                     </span>
                   </div>
 
                   {/* Front Card Overlay Details */}
-                  <div className="absolute bottom-4 left-4 right-4 z-10 p-3 sm:p-4 rounded-xl bg-black/85 backdrop-blur-md border border-white/15 shadow-xl">
-                    <h4 className="text-base sm:text-lg font-bold text-white leading-tight">
+                  <div className="absolute bottom-3 left-3 right-3 z-10 p-2.5 sm:p-3.5 rounded-xl bg-black/85 border border-white/15 shadow-xl">
+                    <h4 className="text-sm sm:text-base font-bold text-white leading-tight truncate">
                       {activePerson.name}
                     </h4>
-                    <p className="text-xs text-cyan-300 font-medium mt-0.5">
+                    <p className="text-[11px] sm:text-xs text-cyan-300 font-medium mt-0.5 truncate">
                       {activePerson.role}
                     </p>
-                    <div className="mt-1.5 sm:mt-2 flex items-center gap-2 text-[10px] sm:text-[11px] text-neutral-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span>{activePerson.status}</span>
+                    <div className="mt-1 sm:mt-1.5 flex items-center gap-1.5 text-[10px] text-neutral-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                      <span className="truncate">{activePerson.status}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -354,8 +343,9 @@ const People = () => {
 
               {/* Click prompt beneath image */}
               <button
+                type="button"
                 onClick={handleNextPerson}
-                className="mt-4 sm:mt-6 flex items-center gap-2 text-xs text-neutral-400 hover:text-cyan-300 transition-colors cursor-pointer group"
+                className="mt-3 sm:mt-5 flex items-center gap-2 text-xs text-neutral-400 hover:text-cyan-300 transition-colors cursor-pointer group"
               >
                 <span>Cycle through stacked cards</span>
                 <FiArrowRight className="w-3.5 h-3.5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
@@ -367,41 +357,41 @@ const People = () => {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`content-${activePerson.id}`}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: 14 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  exit={{ opacity: 0, x: -14 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
                 >
                   {/* Persona Kicker & Designation */}
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">
-                    <FiUserCheck className="w-4 h-4" />
+                  <div className="flex items-center gap-2 text-[11px] sm:text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">
+                    <FiUserCheck className="w-3.5 h-3.5 shrink-0" />
                     <span>Core Discipline</span>
                     <span className="text-neutral-500">·</span>
-                    <span className="text-neutral-400">{activePerson.location}</span>
+                    <span className="text-neutral-400 truncate">{activePerson.location}</span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+                  <h3 className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                     {activePerson.name}
                   </h3>
 
-                  <p className="mt-1 text-sm sm:text-base lg:text-lg font-semibold text-cyan-300">
+                  <p className="mt-1 text-xs xs:text-sm sm:text-base lg:text-lg font-semibold text-cyan-300">
                     {activePerson.role}
                   </p>
 
-                  <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-neutral-300 italic font-serif leading-relaxed border-l-2 border-cyan-400/50 pl-3 sm:pl-4 py-1">
-                    "{activePerson.quote}"
+                  <p className="mt-3 text-xs sm:text-sm md:text-base text-neutral-300 italic font-serif leading-relaxed border-l-2 border-cyan-400/50 pl-3 sm:pl-4 py-0.5">
+                    &ldquo;{activePerson.quote}&rdquo;
                   </p>
 
                   {/* Biography Prose */}
-                  <p className="mt-4 sm:mt-5 text-xs sm:text-sm md:text-base text-neutral-300 leading-relaxed">
+                  <p className="mt-3.5 sm:mt-5 text-xs sm:text-sm md:text-base text-neutral-300 leading-relaxed">
                     {activePerson.bio}
                   </p>
 
                   {/* Quantitative Track Record Metrics */}
-                  <div className="mt-6 sm:mt-8 grid grid-cols-3 gap-2 sm:gap-4 p-3 sm:p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                  <div className="mt-5 sm:mt-7 grid grid-cols-3 gap-2 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/10">
                     {activePerson.stats.map((stat, sIdx) => (
                       <div key={sIdx} className="text-center sm:text-left">
-                        <div className="text-lg sm:text-2xl font-extrabold text-white font-mono tabular-nums">
+                        <div className="text-base xs:text-lg sm:text-2xl font-extrabold text-white font-mono tabular-nums">
                           {stat.value}
                         </div>
                         <div className="text-[10px] sm:text-xs text-neutral-400 mt-0.5 line-clamp-1 sm:line-clamp-none">
@@ -412,32 +402,29 @@ const People = () => {
                   </div>
 
                   {/* Core Competencies */}
-                  <div className="mt-8">
-                    <h5 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-3 flex items-center gap-2">
+                  <div className="mt-6 sm:mt-7">
+                    <h5 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2.5 flex items-center gap-2">
                       <FiCode className="w-3.5 h-3.5 text-cyan-400" />
                       Key Competencies & Toolkit
                     </h5>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {activePerson.skills.map((skill, skIdx) => (
                         <span
                           key={skIdx}
-                          className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-neutral-200"
+                          className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[11px] sm:text-xs text-neutral-200"
                         >
                           {skill}
                         </span>
                       ))}
                     </div>
                   </div>
-
-                  {/* Connect & Social Channels */}
-                
                 </motion.div>
               </AnimatePresence>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -1,16 +1,22 @@
+import React from "react";
+
 const TitleHeader = ({ title, sub }) => {
-    return (
-      <div className="flex flex-col items-center gap-5">
+  return (
+    <div className="flex flex-col items-center gap-3 sm:gap-4 max-w-full">
+      {sub && (
         <div className="hero-badge">
-          <p>{sub}</p>
+          <p className="truncate max-w-[88vw] sm:max-w-none">{sub}</p>
         </div>
+      )}
+      {title && (
         <div>
-          <h1 className="font-semibold md:text-5xl text-3xl text-center">
+          <h2 className="font-semibold text-2xl sm:text-3xl md:text-5xl text-center leading-tight">
             {title}
-          </h1>
+          </h2>
         </div>
-      </div>
-    );
-  };
-  
-  export default TitleHeader;
+      )}
+    </div>
+  );
+};
+
+export default React.memo(TitleHeader);

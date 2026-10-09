@@ -4,16 +4,20 @@ import { FiArrowUpRight, FiMail } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#111320] text-white border-t border-white/10 relative z-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <footer className="w-full bg-[#111320] text-white border-t border-white/10 relative z-20 mt-12 sm:mt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Column 1: Brand / Studio Identity */}
-          <div className="flex flex-col items-start space-y-4">
-            <div className="flex items-center gap-3 sm:gap-4 sm:pb-11">
+          <div className="flex flex-col items-start space-y-3 sm:space-y-4">
+            <div className="flex items-center gap-3 sm:gap-4">
               <img
                 src="/images/mark.png"
                 alt="Y2X Digital Growth Agency Logo"
+                loading="lazy"
+                decoding="async"
+                width={80}
+                height={40}
                 className="w-14 sm:w-16 md:w-20 h-auto shrink-0 rounded-xl border border-white/10 shadow-lg object-contain bg-white/5 p-1"
               />
               <div>
@@ -30,17 +34,17 @@ const Footer = () => {
               applications, and transformative brand growth.
             </p>
             <div className="flex items-center gap-2 text-xs text-neutral-400">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
               <span>Available for Global Collaborations</span>
             </div>
           </div>
 
           {/* Column 2: Navigation Links */}
-          <div className="flex flex-col space-y-3">
+          <div className="flex flex-col space-y-2.5 sm:space-y-3">
             <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-400">
               Navigation
             </h4>
-            <ul className="space-y-2 text-sm text-neutral-300">
+            <ul className="grid grid-cols-2 sm:grid-cols-1 gap-x-4 gap-y-1.5 sm:gap-y-2 text-xs sm:text-sm text-neutral-300">
               <li>
                 <a href="#hero" className="hover:text-cyan-400 transition-colors inline-block py-0.5">
                   Home
@@ -57,7 +61,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#skills" className="hover:text-cyan-400 transition-colors inline-block py-0.5">
+                <a href="#tech" className="hover:text-cyan-400 transition-colors inline-block py-0.5">
                   3D Skills
                 </a>
               </li>
@@ -75,11 +79,11 @@ const Footer = () => {
           </div>
 
           {/* Column 3: Capabilities */}
-          <div className="flex flex-col space-y-3">
+          <div className="flex flex-col space-y-2.5 sm:space-y-3">
             <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-400">
               Core Capabilities
             </h4>
-            <ul className="space-y-2 text-sm text-neutral-400">
+            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-neutral-400">
               <li className="hover:text-neutral-200 transition-colors">
                 Full-Stack Web Development
               </li>
@@ -102,12 +106,12 @@ const Footer = () => {
           </div>
 
           {/* Column 4: Connect & Socials */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-3 sm:space-y-4">
             <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-400">
               Connect With Us
             </h4>
             <p className="text-xs text-neutral-400 leading-relaxed">
-              Have an upcoming product launch or ambitious vision? Let's discuss your next breakthrough.
+              Have an upcoming product launch or ambitious vision? Let&apos;s discuss your next breakthrough.
             </p>
             <div className="flex flex-wrap gap-2.5">
               <a
@@ -120,7 +124,7 @@ const Footer = () => {
                 <FaGithub size={18} />
               </a>
               <a
-                href="www.linkedin.com/in/y2x-solution-411511442/"
+                href="https://www.linkedin.com/in/y2x-solution-411511442/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
@@ -150,7 +154,7 @@ const Footer = () => {
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors pt-2"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors pt-1"
             >
               <FiMail className="w-3.5 h-3.5" />
               <span>Start a Conversation</span>
@@ -160,11 +164,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar: Copyright & Attribution */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 text-center sm:text-left">
+        <div className="mt-8 sm:mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-xs text-neutral-400 text-center sm:text-left">
           <p>
             © {new Date().getFullYear()} Y2X Studio / Yash Suryawanshi. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-neutral-400">
+          <div className="flex items-center gap-3 sm:gap-4 text-neutral-400">
             <span>High-Performance Digital Engineering</span>
             <span>·</span>
             <span>Worldwide</span>
@@ -175,4 +179,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default React.memo(Footer);

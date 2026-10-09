@@ -1,14 +1,27 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Application } from "@splinetool/runtime";
+import { useInView } from "../utils/usePerformance";
 
 const SafeSpline = ({ scene, className = "", style = {}, onLoad }) => {
+  const { ref: inViewRef, hasBeenInView } = useInView({
+    rootMargin: "250px 0px",
+    once: true,
+  });
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
   const appRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
+  // Merge refs
+  const setContainerRefs = (node) => {
+    containerRef.current = node;
+    inViewRef.current = node;
+  };
+
   useEffect(() => {
+    if (!hasBeenInView) return;
+
     let isMounted = true;
     let splineApp = null;
 
@@ -17,14 +30,12 @@ const SafeSpline = ({ scene, className = "", style = {}, onLoad }) => {
       const container = containerRef.current;
       if (!canvas) return;
 
-      // Ensure canvas has valid non-zero dimensions to prevent zero-size texture swapchain errors
-      const initialWidth = container?.clientWidth || 800;
-      const initialHeight = container?.clientHeight || 480;
+      const initialWidth = container?.clientWidth || 600;
+      const initialHeight = container?.clientHeight || 360;
       canvas.width = Math.max(initialWidth, 100);
       canvas.height = Math.max(initialHeight, 100);
 
       try {
-        // Explicitly use the rock-solid 'webgl' backend to bypass experimental WebGPU swapchain validation crashes
         splineApp = new Application(canvas, {
           renderer: "webgl",
         });
@@ -67,11 +78,11 @@ const SafeSpline = ({ scene, className = "", style = {}, onLoad }) => {
         appRef.current = null;
       }
     };
-  }, [scene]);
+  }, [scene, hasBeenInView]);
 
   return (
     <div
-      ref={containerRef}
+      ref={setContainerRefs}
       className={`relative w-full h-full overflow-hidden ${className}`}
       style={style}
     >
@@ -80,14 +91,17 @@ const SafeSpline = ({ scene, className = "", style = {}, onLoad }) => {
           <div className="w-8 h-8 border-2 border-amber-400 border-t-transparent rounded-full animate-spin opacity-70" />
         </div>
       )}
-      <canvas
-        ref={canvasRef}
-        style={{
-          width: "100%",
-          height: "100%",
-          display: hasError ? "none" : "block",
-        }}
-      />
+      {hasBeenInView && (
+        <canvas
+          ref={canvasRef}
+          style={{
+            width: "100%",
+            height: "100%",
+            display: hasError ? "none" : "block",
+            touchAction: "pan-y",
+          }}
+        />
+      )}
       {hasError && (
         <div className="w-full h-full flex flex-col items-center justify-center text-xs text-neutral-400 p-4 text-center">
           <p className="font-medium text-neutral-300">Interactive 3D Experience</p>
@@ -97,4 +111,5 @@ const SafeSpline = ({ scene, className = "", style = {}, onLoad }) => {
   );
 };
 
-export default SafeSpline;
+export default React.memo(SafeSpline);
+
