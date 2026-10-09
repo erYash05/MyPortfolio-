@@ -7,7 +7,7 @@ const ExpContent = () => {
       {/* Title */}
       <div className="relative z-10 flex items-center justify-between gap-2">
         <span className="font-semibold bg-amber-500 text-black px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm md:text-base w-fit">
-          Frontend Developer Intern
+          Join Us 🚀...............................................
         </span>
       </div>
 
